@@ -6,8 +6,12 @@
 // send host (aka ip address)
 #define HOST "localhost"
 
-/// send port
-#define PORT 12345
+// send port
+#define SEND_PORT 12345
+#define RECEIVE_PORT 7400
+
+// max number of strings to display
+#define NUM_MSG_STRINGS 20
 
 class ofApp : public ofBaseApp{
 
@@ -35,6 +39,17 @@ public:
         
     ofTrueTypeFont font;
     ofBuffer imgAsBuffer;
-    ofImage img; 
+    ofImage img;
+    
+    int currentMsgString;
+    string msgStrings[NUM_MSG_STRINGS];
+    float timers[NUM_MSG_STRINGS];
+
+    float mouseXf = 0;
+    float mouseYf = 0;
+    int mouseButtonInt = 0;
+    string mouseButtonState = "";
+
+    ofImage receivedImage;
 		
 };
