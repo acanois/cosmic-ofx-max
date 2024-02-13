@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxOsc.h"
+#include "OscReceiver.hpp"
 
 // send host (aka ip address)
 #define HOST "localhost"
@@ -13,7 +14,7 @@
 // max number of strings to display
 #define NUM_MSG_STRINGS 20
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
 public:
     void setup() override;
@@ -51,5 +52,4 @@ public:
     string mouseButtonState = "";
 
     ofImage receivedImage;
-		
 };
