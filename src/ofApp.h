@@ -35,21 +35,6 @@ public:
     void dragEvent(ofDragInfo dragInfo) override;
     void gotMessage(ofMessage msg) override;
     
-    ofxOscSender sender;
-    ofxOscReceiver receiver;
-        
-    ofTrueTypeFont font;
-    ofBuffer imgAsBuffer;
-    ofImage img;
-    
-    int currentMsgString;
-    string msgStrings[NUM_MSG_STRINGS];
-    float timers[NUM_MSG_STRINGS];
-
-    float mouseXf = 0;
-    float mouseYf = 0;
-    int mouseButtonInt = 0;
-    string mouseButtonState = "";
-
-    ofImage receivedImage;
+    // Max -> Ofx OSC Receiver
+    std::unique_ptr<OscReceiver> mOscReceiver;
 };

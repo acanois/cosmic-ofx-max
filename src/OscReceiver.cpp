@@ -15,9 +15,13 @@ OscReceiver::OscReceiver()
 
 void OscReceiver::receiveMessages() {
     while (mReceiver->hasWaitingMessages()) {
-        ofxOscMessage m;
-        mReceiver->getNextMessage(m);
+        ofxOscMessage message;
+        mReceiver->getNextMessage(message);
         
-        ofLog() << m.getAddress();
+        ofLog() << message.getAddress();
+        
+        for (auto i = 0; i < message.getNumArgs(); i++) {
+            ofLog() << message.getArgAsInt(i);
+        }
     }
 }
